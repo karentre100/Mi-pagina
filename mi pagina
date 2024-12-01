@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 10px;
+        }
+        input {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #ec407a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d81b60;
+        }
+        img {
+            margin-top: 20px;
+            display: none;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulación de Ingreso de Datos</h1>
+    <form id="datosForm">
+        <input type="text" id="tarjeta" placeholder="Número de Tarjeta" required>
+        <input type="text" id="fecha" placeholder="Fecha de Vencimiento (MM/AA)" required>
+        <input type="text" id="codigo" placeholder="Código de Seguridad (CVV)" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <img id="recompensa" src="https://placekitten.com/400/300" alt="Recompensa">
+    <script>
+        document.getElementById('datosForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            const tarjeta = document.getElementById('tarjeta').value;
+            const fecha = document.getElementById('fecha').value;
+            const codigo = document.getElementById('codigo').value;
+
+            // Validación básica para que no estén vacíos
+            if (tarjeta && fecha && codigo) {
+                alert("Datos ingresados correctamente (Simulado).");
+                document.getElementById('recompensa').style.display = 'block'; // Muestra la imagen
+            } else {
+                alert("Por favor, completa todos los campos.");
+            }
+        });
+    </script>
+</body>
+</html>
